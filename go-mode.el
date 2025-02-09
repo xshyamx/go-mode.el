@@ -1949,7 +1949,7 @@ arguments can be set as a list via ‘gofmt-args’."
                 (if (zerop (let ((local-copy (file-local-copy tmpfile)))
                              (unwind-protect
                                  (call-process-region
-                                  (point-min) (point-max) "diff" nil patchbuf
+                                  (point-min) (point-max) diff-command nil patchbuf
                                   nil "-n" "-" (or local-copy tmpfile))
                                (when local-copy (delete-file local-copy)))))
                     (message "Buffer is already gofmted")
